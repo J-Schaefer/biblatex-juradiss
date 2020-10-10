@@ -38,7 +38,9 @@
   \setunit{\\}\newblock
   \usebibmacro{title}%
   \newunit\newblock
-  \printfield{journaltitle}%
+  \iffieldundef{shortjournal}
+    {\printfield{journaltitle}}%
+    {\printfield{shortjournal}}
   \addspace%
   \iffieldequalstr{entrysubtype}{newspaper}%
     {%
