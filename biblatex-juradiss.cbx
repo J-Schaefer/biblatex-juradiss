@@ -160,7 +160,9 @@
 
 % Fu�notenformat f�r Artikel:
 \DeclareBibliographyDriver{cite:article}{%
-  \printfield{journaltitle}%
+  \iffieldundef{shortjournal}
+    {\printfield{journaltitle}}%
+    {\printfield{shortjournal}}%
   \addspace
   \printfield{year}%
   \iffieldundef{postnote}%
