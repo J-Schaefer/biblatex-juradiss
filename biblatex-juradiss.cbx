@@ -1,3 +1,5 @@
+% Definition of in text citing
+
 % biblatex-juradiss.cbx, Tobias Schwan 2012
 % Änderungen von Herbert Voß -- 2020-03-24
 
@@ -318,20 +320,20 @@
 }
 
 \DeclareFieldFormat[jurisdiction]{postnote}{%
-  \iffieldundef{userd}%
-    {#1}%Bei fehlender erster Seite, zB juris, keine Klammern um konkrete Fundstelle
-	{\printfield{userd}\addspace% Erste Seite des Urteils in der Entscheidungssammlung
-    \mkbibparens{#1}}%Seitenzahl der konkreten Fundstelle in Klammern
-  \iffieldundef{journaltitle}{}{%
-    \addspace\mkbibparens{%
-	  =\space
-	  \printfield{journaltitle}\space
-	  \printfield{usere}\addcomma\space
-	  \printfield{pages}%
-	}%
-  }%
-  \iffieldundef{userf}{}{%
-    \addspace--\addnbspace\printfield{userf}\addnbspace--}%
+%   \iffieldundef{userd}%
+%     {#1}%Bei fehlender erster Seite, zB juris, keine Klammern um konkrete Fundstelle
+% 	{\printfield{userd}\addspace% Erste Seite des Urteils in der Entscheidungssammlung
+%     \mkbibparens{#1}}%Seitenzahl der konkreten Fundstelle in Klammern
+%   \iffieldundef{journaltitle}{}{%
+%     \addspace\mkbibparens{%
+% 	  =\space
+% 	  \printfield{journaltitle}\space
+% 	  \printfield{usere}\addcomma\space
+% 	  \printfield{pages}%
+% 	}%
+%   }%
+%   \iffieldundef{userf}{}{%
+%     \addspace--\addnbspace\printfield{userf}\addnbspace--}%
 }%
 
 % F�r Parlaments- und Verwaltungsdokumente

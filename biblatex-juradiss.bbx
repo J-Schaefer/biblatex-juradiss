@@ -1,3 +1,5 @@
+% Definition of bibliography
+
 % biblatex-juradiss.bbx, Tobias Schwan 2012
 % Ã„nderungen von Herbert VoÃŸ -- 2020-03-17
 \ProvidesFile{biblatex-juradiss.bbx}[2020/03/24 v0.21 biblatex bibliography style]
@@ -67,8 +69,8 @@
   \usebibmacro{bibindex}%
   \usebibmacro{author/editor}%
   \newunit
-  \usebibmacro{namex}%				<-- Begr. uä als Autoren
-  \usebibmacro{editorx}%			<-- Begr. uä als Hrsg.
+  \usebibmacro{namex}%				<-- Begr. uï¿½ als Autoren
+  \usebibmacro{editorx}%			<-- Begr. uï¿½ als Hrsg.
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{maintitle+title}%
   \newunit
@@ -116,8 +118,8 @@
   \usebibmacro{bibindex}%
   \usebibmacro{author/editor}%
   \newunit
-  \usebibmacro{namex}%				<-- Begr. uä als Autoren
-  \usebibmacro{editorx}%			<-- Begr. uä als Hrsg.
+  \usebibmacro{namex}%				<-- Begr. uï¿½ als Autoren
+  \usebibmacro{editorx}%			<-- Begr. uï¿½ als Hrsg.
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{maintitle+title}%
   \newunit
@@ -166,8 +168,8 @@
   \usebibmacro{bibindex}%
   \usebibmacro{author/editor}%
   \newunit
-  \usebibmacro{namex}%				<-- Begr. uä als Autoren
-  \usebibmacro{editorx}%			<-- Begr. uä als Hrsg.
+  \usebibmacro{namex}%				<-- Begr. uï¿½ als Autoren
+  \usebibmacro{editorx}%			<-- Begr. uï¿½ als Hrsg.
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{maintitle+title}%
   \newunit
@@ -211,14 +213,14 @@
   \usebibmacro{finentry}}%
 
 
-% LitVerz-Format von Büchern  
-% Ein 'zitiert als:' bei Büchern, wenn vom gleichen Autor mehrere Werke zitiert werden
+% LitVerz-Format von Bï¿½chern  
+% Ein 'zitiert als:' bei Bï¿½chern, wenn vom gleichen Autor mehrere Werke zitiert werden
 \DeclareBibliographyDriver{book}{%
   \usebibmacro{bibindex}%
   \usebibmacro{author/editor}%
   \newunit
-  \usebibmacro{namex}%				<-- Begr. uä als Autoren
-  \usebibmacro{editorx}%			<-- Begr. uä als Hrsg.
+  \usebibmacro{namex}%				<-- Begr. uï¿½ als Autoren
+  \usebibmacro{editorx}%			<-- Begr. uï¿½ als Hrsg.
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{maintitle+title}%
   \newunit
@@ -236,7 +238,7 @@
   \printfield{addendum}%
   \newunit\newblock%
   \ifsingletitle{}{% 			<-- Bei mehreren Titeln des gleichen Autors wird ein 
-    \addcomma\addspace%			<-- 'zitiert als:' eingefügt und danach die Zitation
+    \addcomma\addspace%			<-- 'zitiert als:' eingefï¿½gt und danach die Zitation
     \textit{zitiert}%  			<-- mit shorttitle/title ausgegeben
     \addnbspace%       			<--
     \textit{als}%      			<--
@@ -339,7 +341,7 @@
 % 	       {}%
 % 	       {\addcomma%
 % 	        \printfield{pages}}}}%
-    \addcomma\addspace%				<-- 'zitiert als:' eingefügt und danach die Zitation
+    \addcomma\addspace%				<-- 'zitiert als:' eingefï¿½gt und danach die Zitation
     \textit{zitiert}%  				<-- mit shorttitle/title ausgegeben
     \addnbspace%       				<--
     \textit{als}%      				<--
@@ -354,7 +356,7 @@
     }%								<--
   \usebibmacro{finentry}}
 
-% LitVerz-Format von Sammelbänden
+% LitVerz-Format von Sammelbï¿½nden
 \DeclareBibliographyDriver{inbook}{%
   \usebibmacro{bibindex}%
   \usebibmacro{author}%
@@ -406,7 +408,7 @@
 % 	       {}%
 % 	       {\addcomma%
 % 	        \printfield{pages}}}}%
-    \addcomma\addspace%				<-- 'zitiert als:' eingefügt und danach die Zitation
+    \addcomma\addspace%				<-- 'zitiert als:' eingefï¿½gt und danach die Zitation
     \textit{zitiert}%  				<-- mit shorttitle/title ausgegeben
     \addnbspace%       				<--
     \textit{als}%      				<--
@@ -437,8 +439,8 @@
      \clearname{editor}}
     {}}
 
-% Zitiert als: für Fälle, in denen die Zitationsweise vom Standard abweicht
-% Vor und nach dem Schrägstrich soll bei zitiert als: im LitVerz kein Leerzeichen sein. 
+% Zitiert als: fï¿½r Fï¿½lle, in denen die Zitationsweise vom Standard abweicht
+% Vor und nach dem Schrï¿½gstrich soll bei zitiert als: im LitVerz kein Leerzeichen sein. 
 \newboolean{zitiertals}
 \setboolean{zitiertals}{false}
 
@@ -457,7 +459,7 @@
     {\ifnum\value{liststop}>2 \finalandcomma\fi
       \addspace\rmfamily{\slash}\addspace}}%
 
-% Verschiedene Hrsg. u. Begr. etc für einen Titel
+% Verschiedene Hrsg. u. Begr. etc fï¿½r einen Titel
 \newbibmacro*{editorx}{%
   \ifnameundef{editora}{}{%
     \newunit\setunit{\multinamedelim}%
@@ -497,7 +499,7 @@
 	\global\undef\bbx@lasthash}%
 }%
 
-% Verschiedene Hrsg. u. Begr. etc füÃ¼r ein Werk
+% Verschiedene Hrsg. u. Begr. etc fï¿½Ã¼r ein Werk
 \newbibmacro*{editorxstrg}[1]{%
   \iffieldundef{#1type}
     {\ifthenelse{\value{#1}>1\OR\ifandothers{#1}}
@@ -507,7 +509,7 @@
        {\bbx@editorstring{\bibstring{\thefield{#1type}s}}}
        {\bbx@editorstring{\bibstring{\thefield{#1type}}}}}}
 
-% Verschiedene Autoren auch als Begr. uä.
+% Verschiedene Autoren auch als Begr. uï¿½.
 \newbibmacro*{namexstrg}[1]{%
   \iffieldundef{#1type}
     {}
@@ -515,7 +517,7 @@
        {\bbx@editorstring{\bibstring{\thefield{#1type}s}}}
        {\bbx@editorstring{\bibstring{\thefield{#1type}}}}}}
 
-% Begr. uä. bei Autoren in den gleichen Klammern, wie editor.
+% Begr. uï¿½. bei Autoren in den gleichen Klammern, wie editor.
 \DeclareFieldFormat{authortype}{\bbx@editorstring{#1}} 
 
 % Gleiche Reihenfolge von Vor- und Nachnamen bei name[a-c]
@@ -523,7 +525,7 @@
 \DeclareNameAlias{nameb}{author}
 \DeclareNameAlias{namec}{author}
 
-% Kein Komma zwischen Autor und Begr. uä
+% Kein Komma zwischen Autor und Begr. uï¿½
 \renewbibmacro*{author:output}{%
   \ifthenelse{\ifuseauthor\AND\NOT\ifnameundef{author}}
     {\ifbool{bbx:idembib}
@@ -538,15 +540,16 @@
     {}
     {\usebibmacro{authorstrg}}}%			<-- 
   {}}
+
+\DeclareFieldFormat{shorttitle}{#1} 
 	   
 % LitVerz-Format von Online-Quellen  
 \DeclareBibliographyDriver{online}{%
   \usebibmacro{bibindex}%
   \usebibmacro{author/editor}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\\}\newblock
   \usebibmacro{title}%
   \newunit\newblock%
-  \textit{\printtext{abrufbar unter}}\addcolon\space
   \usebibmacro{url+urldate}%
   \newunit\newblock
   \newunit\newblock
@@ -554,31 +557,36 @@
   \newunit\newblock
   %\usebibmacro{pageref}%
   \iffieldundef{shorttitle}{%
-    \ifsingletitle{}{% 				<-- Bei mehreren Titeln des gleichen Autors wird ein 
-      \addcomma\addspace%			<-- 'zitiert als:' eingefügt und danach die Zitation
-      \textit{zitiert}%  			<-- mit shorttitle/title ausgegeben
+  \ifsingletitle{}{% 				<-- Bei mehreren Titeln des gleichen Autors wird ein 
+  \addcomma\addspace%			<-- 'zitiert als:' eingefï¿½gt und danach die Zitation
+      (\text{zitiert}%  			<-- mit shorttitle/title ausgegeben
       \addnbspace%       			<--
-      \textit{als}%      			<--
+      \text{als}%      			<--
       \addcolon%         			<--
       \addnbspace%      			<--
       \printnames{labelname}%	 	<--
       \addcomma%					<--
       \addnbspace%					<--
-      \printfield{title}}}%			<--
-    {\addcomma\addspace%			<-- 'zitiert als:' eingefügt und danach die Zitation
-    \textit{zitiert}%  				<--  mit shorttitle ausgegeben, falls vorhanden
+      \printfield{title})
+    }
+  }%			<--
+  {
+    \addcomma\addspace%			<-- 'zitiert als:' eingefï¿½gt und danach die Zitation
+    (\text{zitiert}%  				<--  mit shorttitle ausgegeben, falls vorhanden
     \addnbspace%       				<--
-    \textit{als}%      				<--
+    \text{als}%      				<--
     \addcolon%         				<--
     \addnbspace%      				<--
     \printnames{labelname}%			<--
     \addcomma%						<--
     \addnbspace%					<--
-	\printfield{shorttitle}}%		<--
+	\printfield{shorttitle})
+    }%		<--
   \usebibmacro{finentry}%
 }
 
 % Damit kein URL: vor der Adresse erscheint
+\urlstyle{same}
 \DeclareFieldFormat{url}{\url{#1}}
 
 % Statt "besucht am" soll "abgerufen am" vor dem Datum des letzten Abrufs stehen
