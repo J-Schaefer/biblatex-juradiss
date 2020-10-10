@@ -35,7 +35,7 @@
 \DeclareBibliographyDriver{article}{% default
   \usebibmacro{bibindex}%
   \usebibmacro{author/editor}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\\}\newblock
   \usebibmacro{title}%
   \newunit\newblock
   \printfield{journaltitle}%
@@ -70,8 +70,8 @@
   \usebibmacro{bibindex}%
   \usebibmacro{author/editor}%
   \newunit
-  \usebibmacro{namex}%				<-- Begr. u� als Autoren
-  \usebibmacro{editorx}%			<-- Begr. u� als Hrsg.
+  \usebibmacro{namex}%				<-- Begr. uä als Autoren
+  \usebibmacro{editorx}%			<-- Begr. uä als Hrsg.
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{maintitle+title}%
   \newunit
@@ -119,8 +119,8 @@
   \usebibmacro{bibindex}%
   \usebibmacro{author/editor}%
   \newunit
-  \usebibmacro{namex}%				<-- Begr. u� als Autoren
-  \usebibmacro{editorx}%			<-- Begr. u� als Hrsg.
+  \usebibmacro{namex}%				<-- Begr. uä als Autoren
+  \usebibmacro{editorx}%			<-- Begr. uä als Hrsg.
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{maintitle+title}%
   \newunit
@@ -168,9 +168,9 @@
 \DeclareBibliographyDriver{legal}{%
   \usebibmacro{bibindex}%
   \usebibmacro{author/editor}%
-  \newunit
-  \usebibmacro{namex}%				<-- Begr. u� als Autoren
-  \usebibmacro{editorx}%			<-- Begr. u� als Hrsg.
+  \setunit{\\}
+  \usebibmacro{namex}%				<-- Begr. uä als Autoren
+  \usebibmacro{editorx}%			<-- Begr. uä als Hrsg.
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{maintitle+title}%
   \newunit
@@ -219,9 +219,9 @@
 \DeclareBibliographyDriver{book}{%
   \usebibmacro{bibindex}%
   \usebibmacro{author/editor}%
-  \newunit
-  \usebibmacro{namex}%				<-- Begr. u� als Autoren
-  \usebibmacro{editorx}%			<-- Begr. u� als Hrsg.
+  \setunit{\\}
+  \usebibmacro{namex}%				<-- Begr. uä als Autoren
+  \usebibmacro{editorx}%			<-- Begr. uä als Hrsg.
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{maintitle+title}%
   \newunit
@@ -260,7 +260,7 @@
 \DeclareBibliographyDriver{periodical}{%
   \usebibmacro{bibindex}%
   \usebibmacro{author/editor}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\\}\newblock
   \usebibmacro{title}%
   \newunit
   \usebibmacro{byauthor}%
@@ -294,7 +294,7 @@
 \DeclareBibliographyDriver{incollection}{%
   \usebibmacro{bibindex}%
   \usebibmacro{author}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\\}\newblock
   \usebibmacro{title}%
   \newunit\newblock
   \usebibmacro{in:}%
@@ -361,7 +361,7 @@
 \DeclareBibliographyDriver{inbook}{%
   \usebibmacro{bibindex}%
   \usebibmacro{author}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\\}\newblock
   \usebibmacro{title}%
   \newunit\newblock
   \usebibmacro{in:}%
@@ -510,7 +510,7 @@
        {\bbx@editorstring{\bibstring{\thefield{#1type}s}}}
        {\bbx@editorstring{\bibstring{\thefield{#1type}}}}}}
 
-% Verschiedene Autoren auch als Begr. u�.
+% Verschiedene Autoren auch als Begr. uä.
 \newbibmacro*{namexstrg}[1]{%
   \iffieldundef{#1type}
     {}
@@ -518,7 +518,7 @@
        {\bbx@editorstring{\bibstring{\thefield{#1type}s}}}
        {\bbx@editorstring{\bibstring{\thefield{#1type}}}}}}
 
-% Begr. u�. bei Autoren in den gleichen Klammern, wie editor.
+% Begr. uä. bei Autoren in den gleichen Klammern, wie editor.
 \DeclareFieldFormat{authortype}{\bbx@editorstring{#1}} 
 
 % Gleiche Reihenfolge von Vor- und Nachnamen bei name[a-c]
@@ -526,7 +526,7 @@
 \DeclareNameAlias{nameb}{author}
 \DeclareNameAlias{namec}{author}
 
-% Kein Komma zwischen Autor und Begr. u�
+% Kein Komma zwischen Autor und Begr. uä
 \renewbibmacro*{author:output}{%
   \ifthenelse{\ifuseauthor\AND\NOT\ifnameundef{author}}
     {\ifbool{bbx:idembib}
