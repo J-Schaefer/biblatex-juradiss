@@ -168,9 +168,21 @@
   \iffieldundef{postnote}%
     {\iffieldundef{pages}{}%
 	  {\addcomma\space%
-       \printfield{pages}}}%
-    {}%
+       \printfield{pages}}
+      \adddot}%
+    {\iffieldundef{pages}{}%
+      {\addcomma\space%
+      \printfield{pages}}}%
 }
+
+\DeclareFieldFormat[article]{postnote}{%
+  \iffieldundef{userd}%
+    {#1}%Bei fehlender erster Seite, zB juris, keine Klammern um konkrete Fundstelle
+	{\printfield{userd}\addspace% Erste Seite des Urteils in der Entscheidungssammlung
+    \mkbibparens{#1}}%Seitenzahl der konkreten Fundstelle in Klammern
+    \adddot
+}%
+
 
 \DeclareBibliographyDriver{cite:article:other}{%
   \printfield{journaltitle}%
@@ -318,7 +330,7 @@
 	}%
 	\iffieldundef{userf}{}{%Entscheidungsname vorhanden?
     \addspace--\addnbspace\printfield{userf}\addnbspace--}}%
-  {}% 
+  {}%
 }
 
 \DeclareFieldFormat[jurisdiction]{postnote}{%
