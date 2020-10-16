@@ -294,12 +294,14 @@
 
 % LitVerz-Format von Festschriften
 \DeclareBibliographyDriver{incollection}{%
+\iffieldundef{author}{}{
   \usebibmacro{bibindex}%
   \usebibmacro{author}%
   \setunit{\\}\newblock
   \usebibmacro{title}%
   \newunit\newblock
   \usebibmacro{in:}%
+}%
 %   \ifnamexref{labelname}%
 % 	  {\global\bbx@xrefnoidemfalse}%
 % 	  {\global\bbx@xrefnoidemtrue%
@@ -310,30 +312,36 @@
 %		    {\usebibmacro{editorincoll}%
 %		     \setunit{\labelnamepunct}\newblock}%
 %		    {}%
-		\usebibmacro{editorincoll}
-		  \newunit
-		  \usebibmacro{maintitle+booktitle}%
-		  \newunit
-		  \printlist{language}%
-		  \newunit\newblock
-		%  \usebibmacro{byeditor+others}%
-		%  \newunit\newblock
-		  \printfield{edition}%
-		%  \newunit
-      \usebibmacro{volumes+volume+part}%
-		  \setunit{\addspace}%
-		%  \newunit\newblock
-		  \usebibmacro{series+number}%
-		  \newunit\newblock%
-		  \printfield{note}%
-		  \newunit\newblock%
-		  \usebibmacro{publisher+location+date}%
-		  \newunit\newblock%
-		  \pno\ppspace\printfield{pages}%	<--- Seitenzahl mit S.
-		  \newunit\newblock%
-		  \usebibmacro{url+urldate}%
-		  \newunit\newblock%
-		  \printfield{addendum}}%
+\usebibmacro{editorincoll}
+\iffieldundef{author}{
+  \setunit{\\}\newblock
+  }{
+    \newunit
+  }
+\usebibmacro{maintitle+booktitle}%
+\newunit
+% \printlist{language}%
+% \newunit\newblock
+%  \usebibmacro{byeditor+others}%
+%  \newunit\newblock
+    \printfield{edition}%
+%  \newunit
+\usebibmacro{volumes+volume+part}%
+\setunit{\addspace}%
+%  \newunit\newblock
+\usebibmacro{series+number}%
+\newunit\newblock%
+\printfield{note}%
+\newunit\newblock%
+\usebibmacro{publisher+location+date}%
+\newunit\newblock%
+\iffieldundef{pages}{}{
+  \pno\ppspace\printfield{pages}%	<--- Seitenzahl mit S.
+  \newunit\newblock%
+}
+\usebibmacro{url+urldate}%
+\newunit\newblock%
+\printfield{addendum}}%
 % 	  {\ifbool{bbx@edbeforetitle}
 % 	     {\global\cbx@xrefebttrue}%
 % 	     {\global\cbx@xrefebtfalse}%
@@ -344,20 +352,20 @@
 % 	       {}%
 % 	       {\addcomma%
 % 	        \printfield{pages}}}}%
-    \addcomma\addspace%				<-- 'zitiert als:' eingef�gt und danach die Zitation
-    \textit{zitiert}%  				<-- mit shorttitle/title ausgegeben
-    \addnbspace%       				<--
-    \textit{als}%      				<--
-    \addcolon%         				<--
-    \addnbspace%      				<--
-   	\printnames{labelname}%			<--
-    \addcomma%						<--
-    \addnbspace%					<--
-    \iffieldundef{shorttitle}% 		<--   
-      {\printfield{booktitle}}%		<--
-      {\printfield{shorttitle}% 	<--
-    }%								<--
-  \usebibmacro{finentry}}
+\addcomma\addspace%				<-- 'zitiert als:' eingef�gt und danach die Zitation
+(\textit{zitiert}%  				<-- mit shorttitle/title ausgegeben
+\addnbspace%       				<--
+\textit{als}%      				<--
+\addcolon%         				<--
+\addnbspace%      				<--
+\printnames{labelname}%			<--
+\addcomma%						<--
+\addnbspace%					<--
+\iffieldundef{shorttitle}% 		<--   
+  {\printfield{booktitle}}%		<--
+  {\printfield{shorttitle}% 	<--
+})%								<--
+\usebibmacro{finentry}}
 
 % LitVerz-Format von Sammelb�nden
 \DeclareBibliographyDriver{inbook}{%
@@ -543,6 +551,18 @@
     {}
     {\usebibmacro{authorstrg}}}%			<-- 
   {}}
+
+% Remove comma after editor names
+\renewbibmacro*{editorincoll}{%
+  \ifthenelse{\ifuseeditor\AND\NOT\ifnameundef{editor}}
+    {\ifthenelse{\iffieldequals{author}{editor}\AND
+                 \NOT\iffirstonpage}
+       {\bibnamedash}
+       {\printnames[upshape][1-10]{editor}\addspace
+        \savefield{namehash}{\bbx@lasthash}}%
+     \usebibmacro{editorstrg}%
+     \clearname{editor}}
+    {\global\undef\bbx@lasthash}}
 
 \DeclareFieldFormat{shorttitle}{#1} 
 	   
