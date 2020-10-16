@@ -233,14 +233,14 @@
   \newunit
   \usebibmacro{volumes+volume+part}%
   \setunit{\addspace}%
-  \usebibmacro{series+number}%
+%   \usebibmacro{series+number}%
   \newunit\newblock
   \usebibmacro{publisher+location+date}%
   \newunit\newblock
   \usebibmacro{chapter+pages}%
   \printfield{addendum}%
   \newunit\newblock%
-  \ifsingletitle{}{% 			<-- Bei mehreren Titeln des gleichen Autors wird ein 
+%   \ifsingletitle{}{% 			<-- Bei mehreren Titeln des gleichen Autors wird ein 
     \addcomma\addspace%			<-- 'zitiert als:' eingef�gt und danach die Zitation
     \textit{zitiert}%  			<-- mit shorttitle/title ausgegeben
     \addnbspace%       			<--
@@ -254,7 +254,7 @@
       {\printfield{title}}%		<--
       {\printfield{shorttitle}% <--
     }%							<--
-  }%  
+%   }%  
   \newunit\newblock
   \usebibmacro{finentry}}%
 
