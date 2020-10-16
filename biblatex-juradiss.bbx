@@ -242,7 +242,7 @@
   \newunit\newblock%
 %   \ifsingletitle{}{% 			<-- Bei mehreren Titeln des gleichen Autors wird ein 
     \addcomma\addspace%			<-- 'zitiert als:' eingef�gt und danach die Zitation
-    \textit{zitiert}%  			<-- mit shorttitle/title ausgegeben
+    (\textit{zitiert}%  			<-- mit shorttitle/title ausgegeben
     \addnbspace%       			<--
     \textit{als}%      			<--
     \addcolon%         			<--
@@ -253,7 +253,7 @@
     \iffieldundef{shorttitle}% 	<--   
       {\printfield{title}}%		<--
       {\printfield{shorttitle}% <--
-    }%							<--
+    }\addcomma\ S.)%							<--
 %   }%  
   \newunit\newblock
   \usebibmacro{finentry}}%
