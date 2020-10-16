@@ -22,7 +22,8 @@
 %\DeclareFieldFormat[article]{postnote}{\printfield{\mkfirstpage{pages}} \mkbibparens{#1}}
 \DeclareFieldFormat[article]{postnote}{\printfield{pages} \mkbibparens{#1}}  
 \DeclareFieldFormat[periodical]{postnote}{\printfield{pages} \mkbibparens{#1}}
-\DeclareFieldFormat[incollection]{postnote}{\printfield{pages} \mkbibparens{#1}}
+\DeclareFieldFormat[incollection]{postnote}{\printfield{pages} \mkbibparens{#1}\adddot
+}
 % Kein S. für die konkrete Fundstelle
 \DeclareFieldFormat[legal]{postnote}{#1}
 \DeclareFieldFormat[jurisdiction]{postnote}{#1}
@@ -216,9 +217,11 @@
 			{\printfield{shorttitle}}%
 		}%
 	\iffieldundef{postnote}%
-     {\addcomma\space%
-     \printfield{pages}}%
-     {}%
+    {%
+      \iffieldundef{pages}{}{\addcomma\space\printfield{pages}}
+      \adddot
+    }%
+    {}%
 }%
 
 % Kursive Schrift f�r Bearbeiter von Kommentaren
@@ -270,7 +273,8 @@
     \iffieldundef{shorttitle}%     
       {\printfield{title}}%		
 	  {\printfield{shorttitle}}%	
-    }%
+    }
+    \adddot%
 }%
 
 % Fu�notenformat f�r Periodika:
@@ -282,16 +286,25 @@
   \mkbibparens{\printfield{year}}%
   \iffieldundef{postnote}%
     {\addcomma\space
-     \printfield{pages}}%
+     \printfield{pages}
+     \adddot}%
     {}%
 }%
 
 % Fu�notenformat f�r Online-Quellen:
 \DeclareBibliographyDriver{cite:online}{%
   \iffieldundef{shorttitle}%
-    {\ifsingletitle{}{\printfield{title}}}%
+    {
+        \ifsingletitle
+        {}
+        {\printfield{title}}
+    }%
     {\printfield{shorttitle}}%
-}%
+
+    \iffieldundef{postnote}
+    {\adddot}
+    {}%
+    }
   
 % usera = Entscheidungsart (z.B. Urteil/Beschluss/Vorlagebeschluss)
 % date = Entscheidungsdatum
@@ -330,6 +343,7 @@
 	}%
 	\iffieldundef{userf}{}{%Entscheidungsname vorhanden?
     \addspace--\addnbspace\printfield{userf}\addnbspace--}}%
+    \adddot
   {}%
 }
 
@@ -356,8 +370,8 @@
   \printfield{journaltitle}%
   \addspace
   \printfield{journalsubtitle}%
-  \addcomma
-}%
+  \iffieldundef{postnote}{\adddot}
+  {}}%
 
 
 \endinput
