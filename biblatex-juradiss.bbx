@@ -216,8 +216,8 @@
     \usebibmacro{finentry}}%
 
 
-% LitVerz-Format von B�chern
-% Ein 'zitiert als:' bei B�chern, wenn vom gleichen Autor mehrere Werke zitiert werden
+% LitVerz-Format von Büchern
+% Ein 'zitiert als:' bei Büchern, wenn vom gleichen Autor mehrere Werke zitiert werden
 \DeclareBibliographyDriver{book}{%
     \usebibmacro{bibindex}%
     \usebibmacro{author/editor}%
@@ -241,7 +241,7 @@
     \printfield{addendum}%
     \newunit\newblock%
     %   \ifsingletitle{}{% 			<-- Bei mehreren Titeln des gleichen Autors wird ein
-    \addspace%			<-- 'zitiert als:' eingef�gt und danach die Zitation
+    \addspace%			<-- 'zitiert als:' eingefügt und danach die Zitation
     (\text{zitiert}%  			<-- mit shorttitle/title ausgegeben
     \addnbspace%       			<--
     \text{als}%      			<--
@@ -352,7 +352,7 @@
     % 	       {}%
     % 	       {\addcomma%
     % 	        \printfield{pages}}}}%
-    \addspace%				<-- 'zitiert als:' eingef�gt und danach die Zitation
+    \addspace%				<-- 'zitiert als:' eingefügt und danach die Zitation
     (\text{zitiert}%  				<-- mit shorttitle/title ausgegeben
     \addnbspace%       				<--
     \text{als}%      				<--
@@ -367,7 +367,7 @@
     })%								<--
     \usebibmacro{finentry}}
 
-% LitVerz-Format von Sammelb�nden
+% LitVerz-Format von Sammelbänden
 \DeclareBibliographyDriver{inbook}{%
     \usebibmacro{bibindex}%
     \usebibmacro{author}%
@@ -419,7 +419,7 @@
     % 	       {}%
     % 	       {\addcomma%
     % 	        \printfield{pages}}}}%
-    \addspace%				<-- 'zitiert als:' eingef�gt und danach die Zitation
+    \addspace%				<-- 'zitiert als:' eingefügt und danach die Zitation
     (\text{zitiert}%  				<-- mit shorttitle/title ausgegeben
     \addnbspace%       				<--
     \text{als}%      				<--
@@ -450,8 +450,8 @@
         \clearname{editor}}
     {}}
 
-% Zitiert als: f�r F�lle, in denen die Zitationsweise vom Standard abweicht
-% Vor und nach dem Schr�gstrich soll bei zitiert als: im LitVerz kein Leerzeichen sein.
+% Zitiert als: für Fälle, in denen die Zitationsweise vom Standard abweicht
+% Vor und nach dem Schrägstrich soll bei zitiert als: im LitVerz kein Leerzeichen sein.
 \newboolean{zitiertals}
 \setboolean{zitiertals}{false}
 
@@ -470,7 +470,7 @@
     {\ifnum\value{liststop}>2 \finalandcomma\fi
         \addspace{\slash}\addspace}}%
 
-% Verschiedene Hrsg. u. Begr. etc f�r einen Titel
+% Verschiedene Hrsg. u. Begr. etc für einen Titel
 \newbibmacro*{editorx}{%
     \ifnameundef{editora}{}{%
         \newunit\setunit{\multinamedelim}%
@@ -510,7 +510,7 @@
         \global\undef\bbx@lasthash}%
 }%
 
-% Verschiedene Hrsg. u. Begr. etc f�ür ein Werk
+% Verschiedene Hrsg. u. Begr. etc für ein Werk
 \newbibmacro*{editorxstrg}[1]{%
     \iffieldundef{#1type}
     {\ifthenelse{\value{#1}>1\OR\ifandothers{#1}}
@@ -581,7 +581,7 @@
     %\usebibmacro{pageref}%
     \iffieldundef{shorttitle}{%
         \ifsingletitle{}{% 				<-- Bei mehreren Titeln des gleichen Autors wird ein
-            \addspace%			<-- 'zitiert als:' eingef�gt und danach die Zitation
+            \addspace%			<-- 'zitiert als:' eingefügt und danach die Zitation
             (\text{zitiert}%  			<-- mit shorttitle/title ausgegeben
             \addnbspace%       			<--
             \text{als}%      			<--
@@ -594,7 +594,7 @@
         }
     }%			<--
     {
-        \addcomma\addspace%			<-- 'zitiert als:' eingef�gt und danach die Zitation
+        \addcomma\addspace%			<-- 'zitiert als:' eingefügt und danach die Zitation
         (\text{zitiert}%  				<--  mit shorttitle ausgegeben, falls vorhanden
         \addnbspace%       				<--
         \text{als}%      				<--
