@@ -20,9 +20,9 @@
 
 % Kein S. für die konkrete Fundstelle, dafür in Klammern:
 %\DeclareFieldFormat[article]{postnote}{\printfield{\mkfirstpage{pages}} \mkbibparens{#1}}
-\DeclareFieldFormat[article]{postnote}{\printfield{pages} \mkbibparens{#1}}
-\DeclareFieldFormat[periodical]{postnote}{\printfield{pages} \mkbibparens{#1}}
-\DeclareFieldFormat[incollection]{postnote}{\printfield{pages} \mkbibparens{#1}\adddot
+\DeclareFieldFormat[article]{postnote}{\printfield{pages} #1}
+\DeclareFieldFormat[periodical]{postnote}{\printfield{pages} #1}
+\DeclareFieldFormat[incollection]{postnote}{\printfield{pages} #1\adddot
 }
 % Kein S. für die konkrete Fundstelle
 \DeclareFieldFormat[legal]{postnote}{#1}
@@ -85,12 +85,14 @@
             {}}%
         {}%
     }%
-    {\mkbibemph{%
+    {
+        \mkbibemph{%
             \ifgiveninits
             {\usebibmacro{name:family-given}{\namepartfamily}{\namepartgiveni}{\namepartprefix}{\namepartsuffix}}%
             {\usebibmacro{name:family-given}{\namepartfamily}{\namepartgiven}{\namepartprefix}{\namepartsuffix}}%
             \usebibmacro{name:andothers}%
-        }}%
+        }
+    }%
 }%
 
 \DeclareFieldFormat{shorthand}{%
@@ -127,7 +129,8 @@
                 {}%
                 {\ifnameundef{labelname}%
                     {\newunit
-                        \usebibmacro{cite:byeditor}}%
+                        \usebibmacro{cite:byeditor}
+                    }%
                     {}}%
                 \usebibmacro{cite:save}}%
         }%

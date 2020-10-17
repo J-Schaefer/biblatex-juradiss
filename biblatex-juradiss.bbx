@@ -31,6 +31,8 @@
     }
 }
 
+\DeclareFieldFormat{annotation}{#1}
+
 % LitVerz-Format von Zeitschriftenartikeln
 \DeclareBibliographyDriver{article}{% default
     \usebibmacro{bibindex}%
@@ -358,13 +360,22 @@
     \text{als}%      				<--
     \addcolon%         				<--
     \addnbspace%      				<--
-    \printnames{labelname}%			<--
-    \addcomma%						<--
-    \addnbspace%					<--
-    \iffieldundef{shorttitle}% 		<--
-    {\printfield{booktitle}}%		<--
-    {\printfield{shorttitle}% 	<--
-    })%								<--
+    % \printnames{labelname}%			<--
+    % \addcomma%						<--
+    % \addnbspace%					<--
+    % \iffieldundef{shorttitle}% 		<--
+    % {\printfield{booktitle}}%		<--
+    % {\printfield{shorttitle}% 	<--
+    % }
+    \iffieldundef{annotation}{
+        % Print default entry
+        \printfield{shorttitle}/
+        \textit{Bearbeiter},\text{\S\ Gesetz Rn.)}
+    }{
+        % Print text from annotation field
+        \setunit{}\textit{Bearbeiter}
+        \printfield{annotation})
+    }%								<--
     \usebibmacro{finentry}}
 
 % LitVerz-Format von Sammelbänden
