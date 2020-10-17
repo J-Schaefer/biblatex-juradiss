@@ -101,7 +101,7 @@
   \newunit\newblock
   \printfield{addendum}%
   \newunit\newblock
-  \addcomma\addspace%			<-- 'zitiert als: Bearbeiter in XYZ' 
+  \addspace%			<-- 'zitiert als: Bearbeiter in XYZ' 
   \mkbibemph{%
     zitiert\addnbspace%  			<-- 
     als\addcolon\addspace%      			<--
@@ -150,9 +150,9 @@
   \newunit\newblock
   \printfield{addendum}%
   \newunit\newblock
-  \addcomma\addspace%			<-- 'zitiert als: Bearbeiter in XYZ' 
+  \addspace%			<-- 'zitiert als: Bearbeiter in XYZ' 
   \mkbibemph{%
-    zitiert\addnbspace%  			<-- 
+    (zitiert\addnbspace%  			<-- 
     als\addcolon\addspace%      			<--
     Bearbeiter\addcomma}%			<--
   \usebibmacro{in:}%
@@ -162,7 +162,7 @@
       \printnames{labelname}%
       \setboolean{zitiertals}{false}%
     }%
-    {\printfield{shorthand}}%
+    {\printfield{shorthand}})%
   \usebibmacro{finentry}}%
 
 
@@ -200,9 +200,9 @@
   \newunit\newblock
   \printfield{addendum}%
   \newunit\newblock
-  \addcomma\addspace%			<-- 'zitiert als: Bearbeiter in XYZ' 
+  \addspace%			<-- 'zitiert als: Bearbeiter in XYZ' 
   \mkbibemph{%
-    zitiert\addnbspace%  			<-- 
+    (zitiert\addnbspace%  			<-- 
     als\addcolon\addspace%      			<--
     Bearbeiter\addcomma}%			<--
   \usebibmacro{in:}%
@@ -212,7 +212,7 @@
       \printnames{labelname}%
       \setboolean{zitiertals}{false}%
     }%
-    {\printfield{shorthand}}%
+    {\printfield{shorthand}})%
   \usebibmacro{finentry}}%
 
 
@@ -241,10 +241,10 @@
   \printfield{addendum}%
   \newunit\newblock%
 %   \ifsingletitle{}{% 			<-- Bei mehreren Titeln des gleichen Autors wird ein 
-    \addcomma\addspace%			<-- 'zitiert als:' eingef�gt und danach die Zitation
-    (\textit{zitiert}%  			<-- mit shorttitle/title ausgegeben
+    \addspace%			<-- 'zitiert als:' eingef�gt und danach die Zitation
+    (\text{zitiert}%  			<-- mit shorttitle/title ausgegeben
     \addnbspace%       			<--
-    \textit{als}%      			<--
+    \text{als}%      			<--
     \addcolon%         			<--
     \addnbspace%      			<--
     \printnames{labelname}%	 	<--
@@ -352,10 +352,10 @@
 % 	       {}%
 % 	       {\addcomma%
 % 	        \printfield{pages}}}}%
-\addcomma\addspace%				<-- 'zitiert als:' eingef�gt und danach die Zitation
-(\textit{zitiert}%  				<-- mit shorttitle/title ausgegeben
+\addspace%				<-- 'zitiert als:' eingef�gt und danach die Zitation
+(\text{zitiert}%  				<-- mit shorttitle/title ausgegeben
 \addnbspace%       				<--
-\textit{als}%      				<--
+\text{als}%      				<--
 \addcolon%         				<--
 \addnbspace%      				<--
 \printnames{labelname}%			<--
@@ -419,10 +419,10 @@
 % 	       {}%
 % 	       {\addcomma%
 % 	        \printfield{pages}}}}%
-    \addcomma\addspace%				<-- 'zitiert als:' eingef�gt und danach die Zitation
-    \textit{zitiert}%  				<-- mit shorttitle/title ausgegeben
+    \addspace%				<-- 'zitiert als:' eingef�gt und danach die Zitation
+    (\text{zitiert}%  				<-- mit shorttitle/title ausgegeben
     \addnbspace%       				<--
-    \textit{als}%      				<--
+    \text{als}%      				<--
     \addcolon%         				<--
     \addspace%      				<--
     \printnames{labelname}% 		<-- Autor
@@ -432,7 +432,7 @@
     \iffieldundef{shorttitle}% 		<-- Titel
       {\printfield{booktitle}}%		<-- 
       {\printfield{shorttitle}% 	<--
-    }%								<--
+    })%								<--
   \usebibmacro{finentry}}
   
 % Idem-Funktion falls Festschriftautor und Herausgeber identisch
@@ -581,7 +581,7 @@
   %\usebibmacro{pageref}%
   \iffieldundef{shorttitle}{%
   \ifsingletitle{}{% 				<-- Bei mehreren Titeln des gleichen Autors wird ein 
-  \addcomma\addspace%			<-- 'zitiert als:' eingef�gt und danach die Zitation
+  \addspace%			<-- 'zitiert als:' eingef�gt und danach die Zitation
       (\text{zitiert}%  			<-- mit shorttitle/title ausgegeben
       \addnbspace%       			<--
       \text{als}%      			<--
