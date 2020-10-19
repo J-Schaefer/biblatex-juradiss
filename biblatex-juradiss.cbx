@@ -22,11 +22,11 @@
 %\DeclareFieldFormat[article]{postnote}{\printfield{\mkfirstpage{pages}} \mkbibparens{#1}}
 \DeclareFieldFormat[article]{postnote}{\printfield{pages} #1}
 \DeclareFieldFormat[periodical]{postnote}{\printfield{pages} #1}
-\DeclareFieldFormat[incollection]{postnote}{\printfield{pages} #1\adddot
-}
+\DeclareFieldFormat[incollection]{postnote}{\printfield{pages} #1\adddot}
 % Kein S. für die konkrete Fundstelle
 \DeclareFieldFormat[legal]{postnote}{#1}
 \DeclareFieldFormat[jurisdiction]{postnote}{#1}
+\DeclareFieldFormat[book]{postnote}{#1\adddot}
 
 % Trennzeichen zwischen Autor und Titel in Zitaten
 \renewcommand*{\nametitledelim}{\addcomma\space}%
@@ -301,9 +301,7 @@
         {\printfield{title}}
     }%
     {\printfield{shorttitle}}%
-    \iffieldundef{postnote}
-    {\adddot}
-    {}%
+    \iffieldundef{postnote}{\adddot}{}%
 }
 
 % usera = Entscheidungsart (z.B. Urteil/Beschluss/Vorlagebeschluss)
