@@ -272,12 +272,10 @@
 
 % Fußnotenformat für books:
 \DeclareBibliographyDriver{cite:book}{%
-    \ifsingletitle{}{%
-        \iffieldundef{shorttitle}%
-        {\printfield{title}}%
-        {\printfield{shorttitle}}%
-    }
-    \adddot%
+    \iffieldundef{shorttitle}%
+    {\printfield{title}}%
+    {\printfield{shorttitle}}%
+    \iffieldundef{postnote}{\adddot}{}%
 }%
 
 % Fußnotenformat für Periodika:
